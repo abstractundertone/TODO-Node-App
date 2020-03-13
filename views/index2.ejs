@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO APP</title>
+</head>
+<body>
+  <h2>Todo Application</h2>
+  <form action="/addtodo" method="POST">
+    <input type="text" placeholder="Add new task" name="task">
+    <button type="submit">Add Task</button>
+  </form>
+
+  <h2>To do Tasks</h2>
+  <ul class="todo_items">
+    <% for(var i=0; i < todos.length; i++) {%>
+      <li class="todo_item">
+        <% if(!todos[i].todoStatus) { %>
+          <input type="checkbox"/>
+          <span><%= todos[i].todoItem %></span>
+          <button formaction="/removetodo/:id" type="submit">Remove</button>
+        <% } else {%>
+          <input type="checkbox" checked disabled/>
+          <span style="text-decoration: line-through"><%= todos[i].todoItem %></span>
+        <% } %>
+      </li>
+    <% } %>
+    </ul>
+</body>
+</html>
