@@ -5,6 +5,7 @@ A simple Todo application implemented in Node.js and express with the interface 
 Users can add new task and remove tasks.
 
 Yet to add :
+
    Users can mark task as completed.
    
    The interface display must be improved.
